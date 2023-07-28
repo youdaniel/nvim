@@ -73,6 +73,19 @@ return {
     end,
   },
 
+  -- noice
+  {
+    "folke/noice.nvim",
+    opts = function(_, opts)
+      opts.routes = {
+        {
+          view = "notify",
+          filter = { event = "msg_showmode" },
+        },
+      }
+    end,
+  },
+
   -- surround
   { "echasnovski/mini.surround", enabled = false },
   { "kylechui/nvim-surround", event = "VeryLazy", config = true },
@@ -90,6 +103,7 @@ return {
       opts.defaults.mappings.n = vim.tbl_extend("force", opts.defaults.mappings.n, m)
       opts.defaults.layout_strategy = "flex"
       opts.defaults.layout_config = { horizontal = { preview_cutoff = 0 } }
+      opts.defaults.path_display = { "smart" }
     end,
   },
 

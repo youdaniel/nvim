@@ -27,3 +27,5 @@ for _, mode in ipairs({ "n", "i", "v" }) do
     vim.api.nvim_del_keymap(mode, lhs)
   end
 end
+
+vim.cmd.unmap("gw")
