@@ -7,6 +7,8 @@ local opt = vim.opt
 opt.clipboard = "unnamed"
 opt.conceallevel = 0
 
+vim.g.vimtex_view_method = "zathura"
+
 --- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428
 ---@diagnostic disable: duplicate-set-field
 local notify = vim.notify
