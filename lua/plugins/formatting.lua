@@ -15,7 +15,7 @@ return {
     end,
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     opts = function(_, opts)
       for _, source in pairs(formatters) do
         table.insert(opts.sources, source)
