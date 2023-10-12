@@ -32,23 +32,10 @@ return {
     event = "VeryLazy",
     keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
     opts = {
-      pre_hook = function()
-        require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
-      end,
+      pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
     },
     config = function(_, opts)
       require("Comment").setup(opts)
-    end,
-  },
-
-  -- dashboard
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, dashboard)
-      for _, button in ipairs(dashboard.section.buttons.val) do
-        button.opts.hl = "Function"
-        button.opts.hl_shortcut = "Number"
-      end
     end,
   },
 
