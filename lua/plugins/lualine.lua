@@ -131,7 +131,7 @@ local config = {
   options = {
     component_separators = "",
     section_separators = "",
-    disabled_filetypes = { statusline = { "alpha" } },
+    disabled_filetypes = { statusline = { "dashboard" } },
     globalstatus = true,
   },
   sections = {
@@ -202,7 +202,7 @@ ins_left({
 ins_left({
   "diff",
   source = diff_source,
-  symbols = { added = "  ", modified = "柳", removed = " " },
+  symbols = { added = "  ", modified = " ", removed = " " },
   diff_color = {
     added = { fg = colors.git.add },
     modified = { fg = colors.git.change },
@@ -286,19 +286,6 @@ ins_right({
 
 ins_right({
   function(msg)
-    local function get_registered_providers(filetype)
-      local s = require("null-ls.sources")
-      local available_sources = s.get_available(filetype)
-      local registered = {}
-      for _, source in ipairs(available_sources) do
-        for method in pairs(source.methods) do
-          registered[method] = registered[method] or {}
-          table.insert(registered[method], source.name)
-        end
-      end
-      return registered
-    end
-
     local function add_clients(dest, src, has_name)
       for _, client in pairs(src) do
         local _client = has_name and client.name or client
@@ -312,17 +299,13 @@ ins_right({
     end
 
     msg = msg or "󰒎 LS Inactive"
-    local clients = vim.lsp.get_active_clients({ bufnr = 0 })
-    if next(clients) == nil then
+    local buf_clients = vim.lsp.get_clients({ bufnr = 0 })
+    if next(buf_clients) == nil then
       return (type(msg) == "boolean" or #msg == 0) and "󰒎 LS Inactive" or msg
     end
 
     local client_names = {}
-    local null_ls = require("null-ls")
-    local providers = get_registered_providers(vim.bo.filetype)
-    add_clients(client_names, clients, true)
-    add_clients(client_names, providers[null_ls.methods.FORMATTING] or {}, false)
-    add_clients(client_names, providers[null_ls.methods.DIAGNOSTICS] or {}, false)
+    add_clients(client_names, buf_clients, true)
 
     return "󰒍 " .. table.concat(client_names, ", ")
   end,
