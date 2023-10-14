@@ -1,10 +1,6 @@
 return {
   { "LazyVim/LazyVim", opts = { colorscheme = "catppuccin" } },
 
-  -- disable motion plugins
-  { "ggandor/flit.nvim", enabled = false },
-  { "ggandor/leap.nvim", enabled = false },
-
   -- colorscheme
   {
     "catppuccin/nvim",
