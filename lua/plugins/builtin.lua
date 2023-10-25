@@ -1,25 +1,6 @@
 return {
   { "LazyVim/LazyVim", opts = { colorscheme = "catppuccin" } },
 
-  -- colorscheme
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    opts = {
-      integrations = {
-        illuminate = true,
-        indent_blankline = { enabled = true },
-        lsp_trouble = true,
-        mason = true,
-        mini = true,
-        neotree = true,
-        noice = true,
-        notify = true,
-        which_key = true,
-      },
-    },
-  },
-
   -- comment
   { "echasnovski/mini.comment", enabled = false },
   {
