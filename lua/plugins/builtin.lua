@@ -16,16 +16,6 @@ return {
     end,
   },
 
-  -- formatting
-  {
-    "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = {
-        ["svelte"] = { "prettier" },
-      },
-    },
-  },
-
   -- gitsigns
   {
     "lewis6991/gitsigns.nvim",
