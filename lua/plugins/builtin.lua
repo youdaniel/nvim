@@ -29,6 +29,14 @@ return {
     },
   },
 
+  -- mini.ai
+  {
+    "echasnovski/mini.ai",
+    opts = function(_, opts)
+      opts.custom_textobjects["t"] = false
+    end,
+  },
+
   -- neo-tree
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -92,6 +100,9 @@ return {
   -- then: setup supertab in cmp
   {
     "hrsh7th/nvim-cmp",
+    dependencies = {
+      { "windwp/nvim-autopairs", opts = {} },
+    },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local has_words_before = function()
@@ -125,6 +136,8 @@ return {
           end
         end, { "i", "s" }),
       })
+
+      cmp.event:on("confirm_done", require("nvim-autopairs.completion.cmp").on_confirm_done())
     end,
   },
 }
