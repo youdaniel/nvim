@@ -6,6 +6,7 @@ local opt = vim.opt
 
 opt.clipboard = "unnamed"
 opt.conceallevel = 0
+opt.foldmethod = "manual"
 
 vim.g.vimtex_view_method = "zathura"
 
