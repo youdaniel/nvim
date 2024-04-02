@@ -16,6 +16,18 @@ return {
     end,
   },
 
+  -- flash
+  {
+    "folke/flash.nvim",
+    opts = {
+      modes = {
+        search = {
+          enabled = false,
+        },
+      },
+    },
+  },
+
   -- gitsigns
   {
     "lewis6991/gitsigns.nvim",
