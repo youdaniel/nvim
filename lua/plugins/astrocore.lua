@@ -22,11 +22,11 @@ return {
         ["<Leader>y"] = { "<cmd>%y+<cr>", desc = "Copy buffer" },
       },
       i = {
-        ["<C-v>"] = { '"+p', desc = "Paste selection" },
+        ["<C-v>"] = { '<ESC>"+p', desc = "Paste selection" },
       },
       v = {
         ["<C-c>"] = { '"+yi', desc = "Copy selection" },
-        ["<C-v>"] = { '"+p', desc = "Paste selection" },
+        ["<C-v>"] = { 'c<ESC>"+p', desc = "Paste selection" },
       },
     },
   },
