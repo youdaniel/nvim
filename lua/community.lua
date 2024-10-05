@@ -14,9 +14,8 @@ return {
   { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.markdown-and-latex.vimtex" },
+  { import = "astrocommunity.motion.nvim-surround" },
 
-  -- { import = "astrocommunity.completion.copilot-lua" },
-  { import = "astrocommunity.completion.codeium-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
 
   -- import/override with your plugins folder
