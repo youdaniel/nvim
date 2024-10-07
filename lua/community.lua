@@ -15,6 +15,7 @@ return {
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.motion.nvim-surround" },
+  { import = "astrocommunity.comment.ts-comments-nvim" },
 
   { import = "astrocommunity.diagnostics.trouble-nvim" },
 
