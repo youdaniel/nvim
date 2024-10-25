@@ -13,6 +13,7 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.tailwindcss" },
+  { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.comment.ts-comments-nvim" },
